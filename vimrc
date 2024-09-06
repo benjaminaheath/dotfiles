@@ -76,7 +76,10 @@ nnoremap <silent> <leader><leader> :source ~/.vim/vimrc<CR>
 nnoremap <Leader>s :w<CR>
 inoremap <Leader>s <Esc>:w<CR>a
 vnoremap <Leader>s <Esc>:w<CR>gv
-            
+nnoremap <Leader>b :buffers<CR>:buffer 
+nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>m :bp<CR>
+
 " Tab Moves
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
