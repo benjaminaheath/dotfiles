@@ -6,8 +6,9 @@ set relativenumber
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set backspace=indent,eol,start
 set expandtab
-set smartindent
+set nosmartindent
 set autoread
 set autochdir
 set clipboard+=unnamedplus
@@ -54,21 +55,28 @@ let g:airline#extensions#tabline#formatter = 'jsformatter' " path-to/f
 let g:airline#extensions#tabline#formatter = 'unique_tail' " file-name.js
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
 
-" NERDTree Configuration
-map <C-n> :NERDTreeToggle<CR>
 
 " Fugitive Configuration
 set splitright                     " Open vertical splits to the right
 set splitbelow                     " Open horizontal splits below
 let g:fugitive_git_executable = 'git'  " Specify git executable path
 
+" Map Leader
+let mapleader = ","
+
+" NERDTree Configuration
+map <C-n> :NERDTreeToggle<CR>
+
 " Commentary Configuration
 nmap <leader>c <Plug>Commentary
 
 " Key Mappings
-nnoremap <C-l> :nohlsearch<CR>      " Clear search highlight
-nnoremap <silent> <leader><leader> :wa
-
+nnoremap <Leader>c :nohlsearch<CR>      " Clear search highlight
+nnoremap <silent> <leader><leader> :source ~/.vim/vimrc<CR>
+nnoremap <Leader>s :w<CR>
+inoremap <Leader>s <Esc>:w<CR>a
+vnoremap <Leader>s <Esc>:w<CR>gv
+            
 " Tab Moves
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
@@ -80,11 +88,9 @@ map <Leader>t :vert term ++close<cr>
 tmap <Leader>t <c-w>:vert term ++close<cr>
 
 " Save Key
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>a
-vnoremap <C-s> <Esc>:w<CR>gv
 
-" Close Buffer
+" Buffer Management
+nnoremap <Leader><b> :echo "Hello"
 
 " Automatically close NERDTree when last file is closed
 autocmd bufenter * if (tabpagenr('$') == 1 && winnr('$') == 1 &&
