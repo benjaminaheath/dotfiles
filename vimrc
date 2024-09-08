@@ -89,11 +89,10 @@ nmap <silent> <c-l> :wincmd l<CR>
 " Terminal Mappings
 map <Leader>t :vert term ++close<cr>
 tmap <Leader>t <c-w>:vert term ++close<cr>
-
-" Save Key
-
-" Buffer Management
-nnoremap <Leader><b> :echo "Hello"
+nnoremap <leader>m :term make<cr>
+nnoremap <leader>M :term make clean<cr>
+nnoremap <leader>q :bd!<CR>
+"nnoremap <leader>q :q<CR> " Some mapping to close the terminal
 
 " Automatically close NERDTree when last file is closed
 autocmd bufenter * if (tabpagenr('$') == 1 && winnr('$') == 1 &&
