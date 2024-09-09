@@ -65,7 +65,7 @@ let g:fugitive_git_executable = 'git'  " Specify git executable path
 let mapleader = ","
 
 " NERDTree Configuration
-map <C-n> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " Commentary Configuration
 nmap <leader>c <Plug>Commentary
@@ -77,8 +77,8 @@ nnoremap <Leader>s :w<CR>
 inoremap <Leader>s <Esc>:w<CR>a
 vnoremap <Leader>s <Esc>:w<CR>gv
 nnoremap <Leader>b :buffers<CR>:buffer 
-nnoremap <Leader>n :bn<CR>
-nnoremap <Leader>m :bp<CR>
+nnoremap <C-n> :bn<CR>
+nnoremap <C-p> :bp<CR>
 
 " Tab Moves
 nmap <silent> <c-k> :wincmd k<CR>
@@ -87,12 +87,14 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " Terminal Mappings
-map <Leader>t :vert term ++close<cr>
-tmap <Leader>t <c-w>:vert term ++close<cr>
+map <Leader>t :term ++close<cr>
+map <Leader>T :term 
 nnoremap <leader>m :term make<cr>
 nnoremap <leader>M :term make clean<cr>
 nnoremap <leader>q :bd!<CR>
+"tnoremap <leader>q <C-\><C-n> :bd!<CR>
 "nnoremap <leader>q :q<CR> " Some mapping to close the terminal
+"tmap <Leader>t <c-w>:vert term ++close<cr>
 
 " Automatically close NERDTree when last file is closed
 autocmd bufenter * if (tabpagenr('$') == 1 && winnr('$') == 1 &&
