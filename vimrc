@@ -34,12 +34,11 @@ set colorcolumn=+1
 
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'                " Status/Tabline
-Plug 'vim-airline/vim-airline-themes'         " Airline themes
-Plug 'scrooloose/nerdtree'                    " File system explorer
-Plug 'tpope/vim-fugitive'                     " Git integration
-Plug 'tpope/vim-commentary'                   " Comment/uncomment code
+Plug 'morhetz/gruvbox'                  " Color Scheme
+Plug 'vim-airline/vim-airline'          " Status/Tabline
+Plug 'vim-airline/vim-airline-themes'   " Airline themes
+Plug 'scrooloose/nerdtree'              " File system explorer
+Plug 'tpope/vim-fugitive'               " Git integration
 call plug#end()
 " Gruvbox 
 colorscheme gruvbox
