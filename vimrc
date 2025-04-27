@@ -66,6 +66,7 @@ let g:fugitive_git_executable = 'git'  " Specify git executable path
 " Map Leader
 let mapleader = ","
 
+
 " NERDTree Configuration
 map <leader>a :NERDTreeToggle<CR>
 
@@ -79,11 +80,14 @@ nnoremap <Leader>b :buffers<CR>:buffer
 nnoremap <C-n> :bn<CR>
 nnoremap <C-p> :bp<CR>
 
-" Tab Moves
+" Split Moves
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+" Split Closing
+nmap <silent> <leader>d <c-w>c
 
 " Terminal Mappings
 map <Leader>t :term ++close<cr>
