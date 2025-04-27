@@ -38,6 +38,8 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'                " Status/Tabline
 Plug 'vim-airline/vim-airline-themes'         " Airline themes
 Plug 'scrooloose/nerdtree'                    " File system explorer
+Plug 'junegunn/fzf', {'do': { -> fzf#install() } } " Fuzzy Finder
+Plug 'junegunn/fzf.vim'                            " Fuzzy Finder
 Plug 'tpope/vim-fugitive'                     " Git integration
 Plug 'tpope/vim-commentary'                   " Comment/uncomment code
 call plug#end()
@@ -65,10 +67,7 @@ let g:fugitive_git_executable = 'git'  " Specify git executable path
 let mapleader = ","
 
 " NERDTree Configuration
-map <leader>n :NERDTreeToggle<CR>
-
-" Commentary Configuration
-nmap <leader>c <Plug>Commentary
+map <leader>a :NERDTreeToggle<CR>
 
 " Key Mappings
 nnoremap <Leader>c :nohlsearch<CR>      " Clear search highlight
